@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canvas Viewer</title>
+  <meta name="description" content="Offline viewer for exported Canvas LMS course content." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="canvas-viewer/style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Boot screen shown while JS initialises -->
+    <div class="boot-screen">
+      <div class="boot-spinner"></div>
+      <p>Loading course data…</p>
+    </div>
+  </div>
+
+  <!-- Keyboard shortcuts modal (wired by app.js) -->
+  <div class="modal hidden" id="shortcuts-modal" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2>Keyboard shortcuts</h2>
+        <button class="icon-btn" id="close-shortcuts" aria-label="Close">✕</button>
+      </div>
+      <table class="shortcuts-table">
+        <tbody>
+          <tr><td><kbd>/</kbd></td><td>Focus search</td></tr>
+          <tr><td><kbd>M</kbd></td><td>Toggle sidebar</td></tr>
+          <tr><td><kbd>J</kbd> / <kbd>→</kbd></td><td>Next item</td></tr>
+          <tr><td><kbd>K</kbd> / <kbd>←</kbd></td><td>Previous item</td></tr>
+          <tr><td><kbd>C</kbd></td><td>Mark / unmark complete</td></tr>
+          <tr><td><kbd>?</kbd></td><td>Show this help</td></tr>
+          <tr><td><kbd>Esc</kbd></td><td>Close / blur</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--
+    Drop your exported "viewer" folder (containing course-data.js and files/)
+    next to this index.html, then open the file in a browser.
+  -->
+  <script src="viewer/course-data.js"></script>
+  <script src="canvas-viewer/app.js"></script>
+</body>
+</html>
